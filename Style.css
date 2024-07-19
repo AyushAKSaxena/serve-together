@@ -1,0 +1,302 @@
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background-color: #F4F4F4;
+    color: #333333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header styles */
+header {
+    background-color: #008080;
+    color: white;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 1rem;
+}
+
+nav {
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 1rem;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+/* Mobile menu styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: #008080;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 1em 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* Hero section styles */
+.hero {
+    position: relative;
+    color: white;
+    padding: 5em 0;
+    text-align: center;
+    background: url('header-bg-1.avif');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+}
+
+.hero h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+}
+
+.hero p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    color: black;
+}
+
+.hero button {
+    font-family: 'Roboto', sans-serif;
+    background-color: #FFA500;
+    border: none;
+    color: white;
+    padding: 1em 2em;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #e69500;
+}
+
+/* Section styles */
+section {
+    padding: 2em 0;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-bottom: 1em;
+    color: #008080;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    margin-bottom: 1em;
+    width: 100%;
+    max-width: 400px;
+}
+
+label {
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+input, textarea {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button.btn {
+    font-family: 'Roboto', sans-serif;
+    background-color: #008080;
+    color: white;
+    padding: 0.5em 2em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button.btn:hover {
+    background-color: #006666;
+}
+
+/* Opportunity styles */
+.opportunity-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.opportunity {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1em;
+    margin: 1em;
+    width: calc(33.333% - 2em);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.opportunity img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1em;
+}
+
+.opportunity h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #008080;
+    margin-bottom: 0.5em;
+}
+
+.opportunity p {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 1em;
+    flex-grow: 1;
+}
+
+.opportunity button {
+    font-family: 'Roboto', sans-serif;
+    background-color: #FFA500;
+    border: none;
+    color: white;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.opportunity button:hover {
+    background-color: #e69500;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover, .close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Footer styles */
+footer {
+    background-color: #008080;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    margin-top: 2em;
+}
