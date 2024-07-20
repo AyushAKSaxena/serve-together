@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const title = document.getElementById('title').value;
         const description = document.getElementById('description').value;
+        addOpportunityInDB(title, description)
         addOpportunity(title, description);
         postForm.reset();
     });
@@ -39,6 +40,25 @@ document.addEventListener('DOMContentLoaded', () => {
         applyForm.reset();
         modal.style.display = 'none';
     });
+
+    function addOpportunityInDB(title, description) {
+        const formData = {
+            title: title,
+            description: description
+        }
+        fetch("post_opportunity.php", {
+            method: "POST",
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                alert(data.message);
+            } else {
+                alert("Error: " + data.message);
+            }
+        })
+    }
 
     function addOpportunity(title, description) {
         const opportunity = document.createElement('div');

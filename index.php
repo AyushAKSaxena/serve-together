@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serve-Together</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
     <header>
         <h1>Serve-Together</h1>
         <nav>
-            <ul class="nav-links">
+            <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Volunteer</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
-            <div class="menu-toggle" id="mobile-menu">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
         </nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
     </header>
 
     <main>
@@ -43,14 +42,34 @@
                     <label for="description">Description:</label>
                     <textarea id="description" name="description" required></textarea>
                 </div>
-                <button type="submit" class="btn">Post Opportunity</button>
+                <button type="submit" class="submit-button">Post Opportunity</button>
             </form>
         </section>
 
+
         <section class="opportunities">
             <h2>Volunteer Opportunities</h2>
-            <div id="opportunityList" class="opportunity-list">
-                <!-- Volunteer opportunities will be dynamically added here -->
+            <div id="opportunityList">
+                <?php
+                include 'db_connect.php';
+
+                $query = "SELECT * FROM opportunities";
+                $result = mysqli_query($conn, $query);
+
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<div class='opportunity'>";
+                        echo "<h3>" . $row['title'] . "</h3>";
+                        echo "<p>" . $row['description'] . "</p>";
+                        echo "<button>Apply</button>";
+                        echo "</div>";
+                    }
+                } else {
+                    echo "<p>No opportunities available at the moment.</p>";
+                }
+
+                mysqli_close($conn);
+                ?>
             </div>
         </section>
     </main>
@@ -60,15 +79,11 @@
             <span class="close-button">&times;</span>
             <h2>Apply for Opportunity</h2>
             <form id="applyForm">
-                <div class="form-group">
-                    <label for="volunteerName">Name:</label>
-                    <input type="text" id="volunteerName" name="volunteerName" required>
-                </div>
-                <div class="form-group">
-                    <label for="contactInfo">Contact Information:</label>
-                    <input type="text" id="contactInfo" name="contactInfo" required>
-                </div>
-                <button type="submit" class="btn">Apply</button>
+                <label for="volunteerName">Name:</label>
+                <input type="text" id="volunteerName" name="volunteerName" required>
+                <label for="contactInfo">Contact Information:</label>
+                <input type="text" id="contactInfo" name="contactInfo" required>
+                <button type="submit">Apply</button>
             </form>
         </div>
     </div>
