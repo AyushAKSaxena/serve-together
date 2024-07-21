@@ -82,6 +82,8 @@ nav ul li a {
     background-color: #008080;
 }
 
+
+
 @media (max-width: 768px) {
     nav ul {
         display: none;
@@ -109,7 +111,7 @@ nav ul li a {
     color: white;
     padding: 5em 0;
     text-align: center;
-    background: url('header-bg-1.avif');
+    background: url('../images/header-bg-1.avif');
     background-repeat: no-repeat;
     background-attachment: fixed; 
     background-size: 100% 100%;
@@ -291,6 +293,26 @@ button.btn:hover {
     cursor: pointer;
 }
 
+.apply-button {
+    background-color: #28a745; /* Green color for the button */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.apply-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05);
+}
+
 /* Footer styles */
 footer {
     background-color: #008080;
@@ -373,4 +395,50 @@ section.post-opportunity {
     .post-opportunity {
         margin: 1rem;
     }
+}
+
+/* About Section Styling */
+.about {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Contact Section Styling */
+.contact {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact label {
+    margin: 0.5rem 0 0.2rem;
+}
+
+.contact input, .contact textarea {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact button {
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background-color: #2980b9;
 }

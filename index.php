@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serve-Together</title>
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <h1>Serve-Together</h1>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Volunteer</a></li>
-                <li><a href="#">Contact</a></li>
+            <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="index.php#opportunities">Volunteer</a></li>
+                <li><a href="contact.php">Contact</a></li>
             </ul>
         </nav>
         <div class="menu-toggle" id="mobile-menu">
@@ -28,6 +28,7 @@
         <section class="hero">
             <h2>Make a Difference in Your Community</h2>
             <p>Join us in connecting volunteers with opportunities to serve.</p>
+            </br>
             <button>Get Started</button>
         </section>
 
@@ -79,11 +80,13 @@
             <span class="close-button">&times;</span>
             <h2>Apply for Opportunity</h2>
             <form id="applyForm">
+                <input type="hidden" id="opportunityId" name="opportunity_id" value="">
                 <label for="volunteerName">Name:</label>
-                <input type="text" id="volunteerName" name="volunteerName" required>
+                <input type="text" id="volunteerName" name="name" required>
+            </br>
                 <label for="contactInfo">Contact Information:</label>
-                <input type="text" id="contactInfo" name="contactInfo" required>
-                <button type="submit">Apply</button>
+                <input type="text" id="contactInfo" name="contact_info" required>
+                <button type="submit" class="apply-button">Apply</button>
             </form>
         </div>
     </div>
@@ -92,6 +95,6 @@
         <p>&copy; 2024 Serve-Together. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
 </html>
